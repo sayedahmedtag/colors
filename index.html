@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colors | بودرة دهان الكتروستاتيك صناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14161b;
+    --bg-soft:#191c22;
+    --surface:#20242c;
+    --surface-hover:#262b34;
+    --border:#2c313b;
+    --border-soft:#23272f;
+    --text:#f3f4f6;
+    --text-dim:#a7adb8;
+    --text-faint:#6b7280;
+    --orange:#ff6a2e;
+    --orange-soft:rgba(255,106,46,.16);
+    --cyan:#3fe1ff;
+    --cyan-soft:rgba(63,225,255,.14);
+    --whatsapp:#25d366;
+    --whatsapp-dark:#1ea952;
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:24px;
+    --shadow-lg:0 20px 50px -20px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:88px;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans Arabic',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  ul{list-style:none;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:24px;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(20,22,27,.82);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .header-inner{
+    max-width:1180px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-logo{height:38px;width:auto;display:block;}
+
+  .main-nav{display:flex;align-items:center;gap:28px;}
+  .main-nav a{font-size:.92rem;color:var(--text-dim);transition:color .2s;position:relative;}
+  .main-nav a:hover{color:var(--text);}
+
+  .header-actions{display:flex;align-items:center;gap:12px;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 22px;border-radius:999px;font-size:.9rem;font-weight:600;
+    transition:transform .18s ease, box-shadow .18s ease, background .2s ease, border-color .2s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px -8px var(--orange-soft);}
+  .btn-primary:hover{box-shadow:0 12px 28px -8px rgba(255,106,46,.55);transform:translateY(-1px);}
+  .btn-outline{border:1px solid var(--border);color:var(--text);}
+  .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);}
+  .btn-whatsapp{background:var(--whatsapp);color:#0b1a10;}
+  .btn-whatsapp:hover{background:var(--whatsapp-dark);color:#fff;transform:translateY(-1px);}
+  .btn-sm{padding:8px 16px;font-size:.82rem;}
+  .btn svg{width:16px;height:16px;}
+
+  .mobile-toggle{display:none;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:10px;}
+  .mobile-toggle svg{width:18px;height:18px;}
+  .mobile-nav{display:none;}
+
+  /* ---------- Video landing ---------- */
+  .video-landing{
+    position:relative;overflow:hidden;
+    width:100%;
+    height:62vh;min-height:360px;max-height:680px;
+    margin:0;padding:0;
+    background:#000;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .video-landing video{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .video-landing::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,11,13,.55) 0%, rgba(10,11,13,.25) 45%, rgba(10,11,13,.75) 100%);
+    pointer-events:none;
+  }
+  .video-landing .video-overlay{position:relative;z-index:1;text-align:center;padding:0 24px;}
+  .video-landing .eyebrow{justify-content:center;}
+  .video-landing h1{
+    font-family:'Changa',sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.9rem, 1.3rem + 2.6vw, 3.1rem);
+    line-height:1.15;letter-spacing:-.01em;margin:18px auto 14px;max-width:18ch;
+    text-shadow:0 4px 24px rgba(0,0,0,.4);
+  }
+  .video-landing h1 em{
+    font-style:normal;
+    background:linear-gradient(90deg, var(--orange), var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .video-landing .lead{color:#e7e9ec;max-width:56ch;margin:0 auto;font-size:1.02rem;text-shadow:0 2px 12px rgba(0,0,0,.4);}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:72px 0 40px;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(var(--border-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+    opacity:.5;pointer-events:none;
+  }
+  .hero-inner{
+    max-width:1180px;margin:0 auto;padding-inline:24px;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;color:var(--cyan);background:var(--cyan-soft);
+    border:1px solid rgba(63,225,255,.3);padding:6px 14px;border-radius:999px;
+    font-family:'IBM Plex Mono',monospace;letter-spacing:.02em;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);}
+  .hero h1{
+    font-family:'Changa',sans-serif;font-weight:700;
+    font-size:clamp(2.1rem, 1.3rem + 3.3vw, 3.6rem);
+    line-height:1.12;letter-spacing:-.01em;margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(90deg, var(--orange), var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .lead{font-size:1.05rem;color:var(--text-dim);max-width:52ch;margin-bottom:32px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+
+  .hero-visual{position:relative;aspect-ratio:1/1;max-width:420px;justify-self:center;width:100%;}
+  #magnet-grid{
+    position:absolute;inset:0;
+    display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);
+    gap:8px;padding:18px;
+    background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.02);
+  }
+  .chip{
+    border-radius:7px;
+    transform:translate(var(--tx,0px),var(--ty,0px)) scale(var(--s,1));
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  }
+
+  /* ---------- Suppliers ---------- */
+  .suppliers{padding:52px 0;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);background:var(--bg-soft);}
+  .suppliers-head{text-align:center;margin-bottom:32px;}
+  .suppliers-head span.eyebrow{justify-content:center;margin-bottom:14px;}
+  .suppliers-head h2{font-family:'Changa',sans-serif;font-weight:700;font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);margin-bottom:8px;}
+  .suppliers-head p{color:var(--text-dim);font-size:.92rem;max-width:50ch;margin:0 auto;}
+  .suppliers-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:20px;}
+  .supplier-plate{
+    background:#fff;border-radius:16px;border:1px solid rgba(255,255,255,.08);
+    padding:20px 34px;display:flex;align-items:center;justify-content:center;
+    height:92px;box-shadow:0 14px 30px -18px rgba(0,0,0,.5);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .supplier-plate:hover{transform:translateY(-3px);box-shadow:0 18px 36px -16px rgba(255,106,46,.3);}
+  .supplier-plate img{
+    height:100%;max-height:52px;width:auto;max-width:180px;object-fit:contain;
+    filter:grayscale(1) opacity(.75);transition:filter .25s ease;
+  }
+  .supplier-plate:hover img{filter:grayscale(0) opacity(1);}
+  @media (max-width:640px){
+    .supplier-plate{padding:16px 24px;height:76px;}
+    .supplier-plate img{max-height:38px;max-width:140px;}
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee{
+    border-block:1px solid var(--border-soft);
+    background:var(--bg-soft);
+    overflow:hidden;padding:14px 0;
+  }
+  .marquee-track{
+    display:flex;gap:36px;width:max-content;
+    animation:scroll-x 26s linear infinite;
+  }
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-item{
+    display:flex;align-items:center;gap:10px;
+    font-size:.86rem;color:var(--text-dim);white-space:nowrap;
+  }
+  .marquee-item b{color:var(--text);font-weight:600;}
+  .marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0;}
+  @keyframes scroll-x{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- Section shared ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-family:'Changa',sans-serif;font-weight:700;
+    font-size:clamp(1.7rem, 1.3rem + 1.6vw, 2.5rem);margin-bottom:14px;
+  }
+  .section-head p{color:var(--text-dim);font-size:1rem;max-width:56ch;}
+
+  /* ---------- Why grid ---------- */
+  .why{background:var(--bg);}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .why-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:26px;transition:border-color .2s, transform .2s;
+  }
+  .why-card:hover{border-color:rgba(63,225,255,.35);transform:translateY(-3px);}
+  .why-icon{
+    width:42px;height:42px;border-radius:11px;
+    background:var(--orange-soft);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .why-icon svg{width:22px;height:22px;}
+  .why-card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px;}
+  .why-card p{font-size:.88rem;color:var(--text-dim);line-height:1.65;}
+
+  /* ---------- Catalog ---------- */
+  .catalog{background:var(--bg-soft);border-block:1px solid var(--border-soft);}
+  .catalog-head{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;
+    margin-bottom:40px;
+  }
+  .filter-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .filter-tab{
+    padding:9px 18px;border-radius:999px;font-size:.84rem;font-weight:500;
+    border:1px solid var(--border);color:var(--text-dim);transition:all .2s;
+  }
+  .filter-tab:hover{color:var(--text);}
+  .filter-tab.active{background:var(--text);color:var(--bg);border-color:var(--text);}
+
+  .catalog-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .color-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    overflow:hidden;transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+  .color-card:hover{transform:translateY(-4px);border-color:rgba(63,225,255,.4);box-shadow:0 16px 34px -18px rgba(63,225,255,.35);}
+  .color-card[hidden]{display:none;}
+  .swatch{
+    position:relative;aspect-ratio:16/11;background:var(--swatch);
+  }
+  .swatch--glossy::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 40% at 28% 20%, rgba(255,255,255,.55), transparent 60%);
+  }
+  .swatch--metallic{
+    background-image:linear-gradient(135deg, rgba(255,255,255,.4), transparent 42%, rgba(255,255,255,.16) 58%, transparent 78%), linear-gradient(var(--swatch), var(--swatch));
+  }
+  .swatch--textured{
+    background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,.22) 1px, transparent 0), linear-gradient(var(--swatch), var(--swatch));
+    background-size:9px 9px, auto;
+  }
+  .card-body{padding:16px 16px 18px;}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;}
+  .card-top h3{font-size:.98rem;font-weight:700;}
+  .finish-badge{
+    font-size:.68rem;color:var(--cyan);background:var(--cyan-soft);
+    border:1px solid rgba(63,225,255,.28);padding:3px 9px;border-radius:999px;flex-shrink:0;
+  }
+  .code{font-size:.78rem;color:var(--text-faint);margin-bottom:14px;}
+  .btn-quote{
+    width:100%;padding:9px;border-radius:9px;background:var(--bg-soft);
+    border:1px solid var(--border);font-size:.82rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;
+  }
+  .btn-quote:hover{background:var(--whatsapp);border-color:var(--whatsapp);color:#0b1a10;}
+  .btn-quote svg{width:14px;height:14px;}
+
+  .catalog-note{
+    margin-top:32px;padding:16px 20px;border:1px dashed var(--border);border-radius:var(--radius-md);
+    font-size:.85rem;color:var(--text-faint);
+  }
+
+  /* ---------- Equipment & spare parts ---------- */
+  .equipment{background:var(--bg);}
+  .equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .equip-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    overflow:hidden;transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+  .equip-card:hover{transform:translateY(-4px);border-color:rgba(255,106,46,.4);box-shadow:0 16px 34px -18px rgba(255,106,46,.35);}
+  .equip-card[hidden]{display:none;}
+  .equip-photo{position:relative;aspect-ratio:4/3;background:#fff;overflow:hidden;}
+  .equip-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .equip-card .card-body{padding:16px 16px 18px;display:flex;flex-direction:column;}
+  .equip-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;}
+  .equip-card h3{font-size:.95rem;font-weight:700;line-height:1.35;}
+  .equip-badge{
+    font-size:.66rem;padding:3px 9px;border-radius:999px;flex-shrink:0;white-space:nowrap;
+  }
+  .equip-badge--tool{color:var(--orange);background:var(--orange-soft);border:1px solid rgba(255,106,46,.3);}
+  .equip-badge--part{color:var(--cyan);background:var(--cyan-soft);border:1px solid rgba(63,225,255,.28);}
+  .equip-card p.spec{font-size:.82rem;color:var(--text-dim);margin-bottom:16px;line-height:1.6;}
+  .btn-equip{
+    width:100%;padding:9px;border-radius:9px;background:var(--bg-soft);
+    border:1px solid var(--border);font-size:.82rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;
+  }
+  .btn-equip:hover{background:var(--whatsapp);border-color:var(--whatsapp);color:#0b1a10;}
+  .btn-equip svg{width:14px;height:14px;}
+
+  /* ---------- CTA block ---------- */
+  .cta-block{
+    text-align:center;position:relative;
+  }
+  .cta-block h2{
+    font-family:'Changa',sans-serif;font-weight:700;
+    font-size:clamp(1.8rem,1.3rem + 2vw,2.7rem);margin-bottom:14px;
+  }
+  .cta-block p{color:var(--text-dim);max-width:50ch;margin:0 auto 30px;}
+  .cta-block .btn{padding:15px 34px;font-size:1rem;}
+  .contact-meta{
+    margin-top:36px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+    font-size:.9rem;color:var(--text-dim);
+  }
+  .contact-meta div{display:flex;align-items:center;gap:8px;}
+  .contact-meta svg{width:16px;height:16px;color:var(--cyan);}
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    border-top:1px solid var(--border-soft);padding:26px 0;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    font-size:.82rem;color:var(--text-faint);
+  }
+  .footer-logo{height:24px;width:auto;display:block;}
+  .footer-left{display:flex;align-items:center;gap:8px;}
+
+  /* ---------- Floating WA ---------- */
+  .floating-wa{
+    position:fixed;bottom:22px;left:22px;z-index:200;
+    width:56px;height:56px;border-radius:50%;
+    background:var(--whatsapp);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(37,211,102,.55);
+    transition:transform .2s;
+  }
+  .floating-wa:hover{transform:scale(1.08);}
+  .floating-wa svg{width:26px;height:26px;color:#0b1a10;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-visual{max-width:340px;margin-inline:auto;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .catalog-grid{grid-template-columns:repeat(3,1fr);}
+    .equip-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width:720px){
+    .main-nav{display:none;}
+    .mobile-toggle{display:flex;}
+    .mobile-nav.open{
+      display:flex;flex-direction:column;gap:2px;
+      position:absolute;top:100%;insetInlineStart:0;width:100%;
+      background:var(--bg-soft);border-bottom:1px solid var(--border-soft);padding:10px 24px 16px;
+    }
+    .mobile-nav a{padding:12px 0;border-bottom:1px solid var(--border-soft);font-size:.92rem;color:var(--text-dim);}
+    section{padding:60px 0;}
+    .why-grid{grid-template-columns:1fr;}
+    .catalog-grid{grid-template-columns:repeat(2,1fr);}
+    .equip-grid{grid-template-columns:repeat(2,1fr);}
+    .catalog-head{flex-direction:column;align-items:flex-start;}
+    .contact-meta{flex-direction:column;gap:12px;}
+  }
+  @media (max-width:460px){
+    .catalog-grid{grid-template-columns:1fr 1fr;gap:14px;}
+    .equip-grid{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .marquee-track{animation:none;}
+    .chip{transition:none;}
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <img src="images/logo-mark.png" alt="Colors Powder Coating" class="brand-logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="#top">الرئيسية</a>
+      <a href="#why">ليه البودرة؟</a>
+      <a href="#catalog">كتالوج الألوان</a>
+      <a href="#equipment">الأجهزة وقطع الغيار</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm wa-btn" data-msg="مرحبًا Colors 👋، عايز أعرف تفاصيل عن بودرة الدهان الكتروستاتيك">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .78.8-2.93-.19-.3A7.95 7.95 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+        واتساب
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#top">الرئيسية</a>
+      <a href="#why">ليه البودرة؟</a>
+      <a href="#catalog">كتالوج الألوان</a>
+      <a href="#equipment">الأجهزة وقطع الغيار</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="video-landing" id="video-landing">
+    <video
+      src="video/colors-catalog-video.mp4"
+      poster="images/video-poster.jpg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto">
+    </video>
+    <!-- <div class="video-overlay">
+      <span class="eyebrow">Colors POWDER COATING</span>
+      <h1>شاهد <em>كتالوج الألوان</em> بالفيديو</h1>
+      <p class="lead">جولة سريعة على تشكيلة ألوان بودرة الدهان الكتروستاتيك عندنا.</p>
+    </div> -->
+  </section>
+
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">POWDER COATING · طلاء صناعي</span>
+        <h1>الألوان اللي <em>بتتشحن</em>، وتثبت بالمعدن</h1>
+        <p class="lead">
+          بودرة دهان الكتروستاتيك لكل أنواع المعادن — أجهزة، سيارات، أثاث، دراجات ومقاسات.
+          اختار لونك من الكتالوج، وابعتلنا الكود على واتساب، ونرد عليك بعرض السعر والتفاصيل.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-primary">
+            تصفح كتالوج الألوان
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 17l5-5-5-5"/></svg>
+          </a>
+          <a class="btn btn-outline wa-btn" data-msg="مرحبًا Colors 👋، عايز أعرف تفاصيل عن بودرة الدهان الكتروستاتيك">كلمنا على واتساب</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div id="magnet-grid" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="suppliers" id="suppliers">
+    <div class="wrap">
+      <div class="suppliers-head">
+        <span class="eyebrow">شركاء الجودة</span>
+        <h2>بنستورد من كبرى الشركات العالمية</h2>
+        <p>بودرة الدهان عندنا من موردين ومصانع عالمية موثوقة في صناعة الطلاء الكتروستاتيك.</p>
+      </div>
+      <div class="suppliers-row">
+        <div class="supplier-plate"><img src="images/logo-akzonobel.png" alt="AkzoNobel" loading="lazy"></div>
+        <div class="supplier-plate"><img src="images/logo-union.png" alt="Union Powder Coatings" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">المميزات</span>
+        <h2>ليه تختار بودرة الدهان الكتروستاتيك؟</h2>
+        <p>تشطيب صناعي أقوى، استخدام أعلى كفاءة للمادة، وتحكم أدق في النتيجة النهائية.</p>
+      </div>
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          </div>
+          <h3>كفاءة استخدام تصل لـ95%</h3>
+          <p>فاقد المادة أقل من 5%، والبودرة الزائدة من الرش يمكن تجميعها وإعادة استخدامها مرة أخرى.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4z"/></svg>
+          </div>
+          <h3>تشطيب أقوى وأكثر تحملًا</h3>
+          <p>طبقة صلبة تقاوم الخدش والتآكل بشكل أفضل من الطلاء السائل التقليدي القائم على المذيبات.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 17 3l4 4L7 21H3v-4Z"/><path d="M13 7l4 4"/></svg>
+          </div>
+          <h3>تحكم دقيق في السُمك</h3>
+          <p>سماكة متسقة على كل قطعة، مع إمكانية طبقات رفيعة جدًا للتشطيبات الفاخرة.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 4.5 4.5 0 0 1 0-9 4.5 4.5 0 0 0 0-9z"/></svg>
+          </div>
+          <h3>تنوع كبير في الألوان والملمس</h3>
+          <p>من اللامع إلى المطفي، ميتاليك، وتأثيرات ملمس خشن، بتشكيلة ألوان واسعة.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22c4-3 7-6 7-11a7 7 0 1 0-14 0c0 5 3 8 7 11z"/></svg>
+          </div>
+          <h3>بيئة عمل أنظف وأكثر أمانًا</h3>
+          <p>بدون مذيبات متبخرة، تهوية أقل تعقيدًا، وتدريب أسهل وأسرع للعمالة.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          </div>
+          <h3>يناسب أسطح متعددة</h3>
+          <p>معادن وألومنيوم بشكل أساسي، وبفضل المعالجة بالأشعة فوق البنفسجية حتى البلاستيك وMDF.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="catalog-head">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">الكتالوج</span>
+          <h2>كتالوج الألوان</h2>
+          <p>أكتر من 180 لون بكود RAL القياسي. اختار لونك واضغط "اطلب عرض سعر" ليتم تحويلك مباشرة لواتساب.</p>
+        </div>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">الكل</button>
+          <button class="filter-tab" data-filter="yellow">أصفر</button>
+          <button class="filter-tab" data-filter="orange">برتقالي</button>
+          <button class="filter-tab" data-filter="red">أحمر</button>
+          <button class="filter-tab" data-filter="violet">بنفسجي</button>
+          <button class="filter-tab" data-filter="blue">أزرق</button>
+          <button class="filter-tab" data-filter="green">أخضر</button>
+          <button class="filter-tab" data-filter="grey">رمادي</button>
+          <button class="filter-tab" data-filter="brown">بني</button>
+          <button class="filter-tab" data-filter="white">أبيض وأسود</button>
+        </div>
+      </div>
+
+      <div class="catalog-grid" id="catalogGrid"></div>
+
+      <div class="catalog-note">
+        الألوان بأكواد RAL القياسية. الدرجة النهائية للون قد تختلف قليلًا حسب الشاشة — للتأكد من اللون الدقيق ونوع التشطيب (لامع / مطفي / ميتاليك) كلم فريقنا على واتساب قبل التأكيد.
+      </div>
+    </div>
+  </section>
+
+  <section class="equipment" id="equipment">
+    <div class="wrap">
+      <div class="catalog-head">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">المعدات</span>
+          <h2>الأجهزة وقطع الغيار</h2>
+          <p>أجهزة رش الكتروستاتيك، كابينات، أفران معالجة، وكل قطع الغيار اللازمة لخط إنتاج البودرة.</p>
+        </div>
+        <div class="filter-tabs" id="equipFilterTabs">
+          <button class="filter-tab active" data-equip-filter="all">الكل</button>
+          <button class="filter-tab" data-equip-filter="tool">أجهزة</button>
+          <button class="filter-tab" data-equip-filter="part">قطع غيار</button>
+        </div>
+      </div>
+
+      <div class="equip-grid" id="equipGrid"></div>
+
+      <div class="catalog-note">
+        الصور والمواصفات تقريبية بناءً على المنتجات المتاحة. الأسعار غير معروضة — تواصل معنا على واتساب لمعرفة السعر والتوفر لكل منتج.
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block" id="contact">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center;">تواصل معنا</span>
+      <h2>جاهز تطلب لونك؟</h2>
+      <p>ابعتلنا اسم اللون أو كوده، أو استفسر عن أي تفاصيل، وهنرد عليك بعرض السعر في أقرب وقت.</p>
+      <a class="btn btn-whatsapp wa-btn" data-msg="مرحبًا Colors 👋، عايز أطلب عرض سعر لبودرة الدهان">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .78.8-2.93-.19-.3A7.95 7.95 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+        تواصل على واتساب الآن
+      </a>
+      <a class="btn btn-outline" style="margin-inline-start:12px;" href="https://www.google.com/maps/search/?api=1&query=30.5629715,30.9994784" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        الموقع على الخريطة
+      </a>
+      <div class="contact-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="mono" dir="ltr">01285311992</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>السبت - الخميس، ٩ص - ٦م</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>شبين الكوم، مزلقان المرور، شارع الميهي</span>
+        </div>
+      </div>
+
+      <div style="max-width:640px;margin:28px auto 0;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);">
+        <iframe
+          src="https://maps.google.com/maps?q=30.5629715,30.9994784&z=16&output=embed"
+          width="100%" height="280" style="border:0;display:block;filter:grayscale(0.15) contrast(1.05);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="موقع فرع Colors على الخريطة">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-left" style="padding:0;">
+    <img src="images/logo-mark.png" alt="Colors Powder Coating" class="footer-logo">
+    <span>Colors — بودرة دهان الكتروستاتيك © 2026</span>
+  </div>
+  <div class="wrap" style="padding:0;">الطلب والتواصل عبر واتساب فقط</div>
+</footer>
+
+<a class="floating-wa wa-btn" data-msg="مرحبًا Colors 👋، عايز أستفسر عن بودرة الدهان" aria-label="تواصل على واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .78.8-2.93-.19-.3A7.95 7.95 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+</a>
+
+<script>
+(function(){
+  const WHATSAPP_NUMBER = "201285311992";
+
+  function waLink(message){
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  }
+
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest(".wa-btn");
+    if(!btn) return;
+    e.preventDefault();
+    const msg = btn.getAttribute("data-msg") || "مرحبًا Colors 👋";
+    window.open(waLink(msg), "_blank");
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById("mobileToggle");
+  const mobileNav = document.getElementById("mobileNav");
+  if(toggle){
+    toggle.addEventListener("click", function(){
+      const isOpen = mobileNav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    mobileNav.querySelectorAll("a").forEach(a=>{
+      a.addEventListener("click", ()=> mobileNav.classList.remove("open"));
+    });
+  }
+
+  // Marquee content
+  const facts = [
+    "توفير يصل لـ95% من المادة",
+    "تشطيب صلب ومقاوم للتآكل",
+    "تحكم دقيق في سُمك الطبقة",
+    "تدريب أقل وتشغيل أبسط للعمالة",
+    "يناسب المعادن، الألومنيوم، وأسطح أخرى",
+    "بيئة عمل أنظف بدون مذيبات"
+  ];
+  const track = document.getElementById("marqueeTrack");
+  if(track){
+    const build = () => facts.map(f =>
+      '<span class="marquee-item"><span class="marquee-dot"></span><b>' + f + '</b></span>'
+    ).join("");
+    track.innerHTML = build() + build();
+  }
+
+  // Color catalog data — full RAL Classic set matching the supplied PURITY chart
+  // g = group (yellow/orange/red/violet/blue/green/grey/brown/white), h = hex
+  const groupLabels = {yellow:"أصفر", orange:"برتقالي", red:"أحمر", violet:"بنفسجي", blue:"أزرق", green:"أخضر", grey:"رمادي", brown:"بني", white:"أبيض وأسود"};
+
+  const colors = [
+    // أصفر — 1000 series
+    {c:"1000",n:"بيج مخضر",g:"yellow",h:"#CDBA88"},{c:"1001",n:"بيج",g:"yellow",h:"#D0B084"},
+    {c:"1002",n:"أصفر رملي",g:"yellow",h:"#D2AA6D"},{c:"1003",n:"أصفر إشاري",g:"yellow",h:"#F9A800"},
+    {c:"1004",n:"أصفر ذهبي",g:"yellow",h:"#E49E00"},{c:"1005",n:"أصفر عسلي",g:"yellow",h:"#CB8E00"},
+    {c:"1006",n:"أصفر ذرة",g:"yellow",h:"#E29000"},{c:"1007",n:"أصفر نرجسي",g:"yellow",h:"#E88C00"},
+    {c:"1011",n:"بيج بني",g:"yellow",h:"#AF804F"},{c:"1012",n:"أصفر ليموني",g:"yellow",h:"#DDAF27"},
+    {c:"1013",n:"أبيض لؤلؤي",g:"yellow",h:"#E3D9C6"},{c:"1014",n:"عاجي",g:"yellow",h:"#DDC49A"},
+    {c:"1015",n:"عاجي فاتح",g:"yellow",h:"#E6D2B5"},{c:"1016",n:"أصفر كبريتي",g:"yellow",h:"#F1DD38"},
+    {c:"1017",n:"أصفر زعفراني",g:"yellow",h:"#F6A950"},{c:"1018",n:"أصفر زنكي",g:"yellow",h:"#FACA30"},
+    {c:"1019",n:"بيج رمادي",g:"yellow",h:"#A48F7A"},{c:"1020",n:"أصفر زيتوني",g:"yellow",h:"#A08F65"},
+    {c:"1021",n:"أصفر كانولا",g:"yellow",h:"#F6B600"},{c:"1023",n:"أصفر مروري",g:"yellow",h:"#F7B500"},
+    {c:"1024",n:"أصفر مغرة",g:"yellow",h:"#BA8F4C"},{c:"1027",n:"أصفر كاري",g:"yellow",h:"#A77F0E"},
+    {c:"1028",n:"أصفر شمامي",g:"yellow",h:"#FF9B00"},{c:"1032",n:"أصفر الرتم",g:"yellow",h:"#E2A300"},
+    {c:"1033",n:"أصفر داليا",g:"yellow",h:"#F99A1C"},{c:"1034",n:"أصفر باستيل",g:"yellow",h:"#EB9C52"},
+    // برتقالي — 2000 series
+    {c:"2000",n:"برتقالي مصفر",g:"orange",h:"#DD7907"},{c:"2001",n:"برتقالي محمر",g:"orange",h:"#BE4E20"},
+    {c:"2002",n:"برتقالي دموي",g:"orange",h:"#C63927"},{c:"2003",n:"برتقالي باستيل",g:"orange",h:"#FA842B"},
+    {c:"2004",n:"برتقالي نقي",g:"orange",h:"#E75B12"},{c:"2008",n:"برتقالي محمر فاتح",g:"orange",h:"#F3752C"},
+    {c:"2009",n:"برتقالي مروري",g:"orange",h:"#E15501"},{c:"2010",n:"برتقالي إشاري",g:"orange",h:"#D4652F"},
+    {c:"2011",n:"برتقالي غامق",g:"orange",h:"#EC7C25"},{c:"2012",n:"برتقالي سلموني",g:"orange",h:"#DB6A50"},
+    // أحمر — 3000 series
+    {c:"3000",n:"أحمر ناري",g:"red",h:"#AB2524"},{c:"3001",n:"أحمر إشاري",g:"red",h:"#A02128"},
+    {c:"3002",n:"أحمر قرمزي",g:"red",h:"#A1232B"},{c:"3003",n:"أحمر ياقوتي",g:"red",h:"#8D1D2C"},
+    {c:"3004",n:"أحمر أرجواني",g:"red",h:"#701F29"},{c:"3005",n:"أحمر نبيتي",g:"red",h:"#5E2028"},
+    {c:"3007",n:"أحمر مسود",g:"red",h:"#402225"},{c:"3009",n:"أحمر أكسيدي",g:"red",h:"#703731"},
+    {c:"3011",n:"أحمر بني",g:"red",h:"#7E292C"},{c:"3012",n:"أحمر بيج",g:"red",h:"#CB8D73"},
+    {c:"3013",n:"أحمر طماطمي",g:"red",h:"#9C322E"},{c:"3014",n:"وردي عتيق",g:"red",h:"#D47479"},
+    {c:"3015",n:"وردي فاتح",g:"red",h:"#E1A6AD"},{c:"3016",n:"أحمر مرجاني",g:"red",h:"#AC4034"},
+    {c:"3017",n:"وردي",g:"red",h:"#D3545F"},{c:"3018",n:"أحمر فراولة",g:"red",h:"#D14152"},
+    {c:"3020",n:"أحمر مروري",g:"red",h:"#C1121C"},{c:"3022",n:"أحمر سلموني",g:"red",h:"#D56D56"},
+    {c:"3027",n:"أحمر توت",g:"red",h:"#B42041"},{c:"3031",n:"أحمر شرقي",g:"red",h:"#AC323B"},
+    // بنفسجي — 4000 series
+    {c:"4001",n:"ليلكي محمر",g:"violet",h:"#8A5A83"},{c:"4002",n:"بنفسجي محمر",g:"violet",h:"#933D50"},
+    {c:"4003",n:"بنفسجي إريكا",g:"violet",h:"#D15B8F"},{c:"4004",n:"بنفسجي عنابي",g:"violet",h:"#691639"},
+    {c:"4005",n:"ليلكي مزرق",g:"violet",h:"#83639D"},{c:"4006",n:"أرجواني مروري",g:"violet",h:"#992572"},
+    {c:"4007",n:"بنفسجي أرجواني",g:"violet",h:"#4A203B"},{c:"4008",n:"بنفسجي إشاري",g:"violet",h:"#904684"},
+    {c:"4009",n:"بنفسجي باستيل",g:"violet",h:"#A38995"},{c:"4010",n:"ماجنتا",g:"violet",h:"#C63678"},
+    // أزرق — 5000 series
+    {c:"5000",n:"أزرق بنفسجي",g:"blue",h:"#384C70"},{c:"5001",n:"أزرق مخضر",g:"blue",h:"#1F4764"},
+    {c:"5002",n:"أزرق أوترامارين",g:"blue",h:"#2B2C7C"},{c:"5003",n:"أزرق ياقوتي",g:"blue",h:"#2A3756"},
+    {c:"5004",n:"أزرق مسود",g:"blue",h:"#1D1F2A"},{c:"5005",n:"أزرق إشاري",g:"blue",h:"#154889"},
+    {c:"5007",n:"أزرق لامع",g:"blue",h:"#41678D"},{c:"5008",n:"أزرق رمادي",g:"blue",h:"#313C48"},
+    {c:"5009",n:"أزرق سماوي غامق",g:"blue",h:"#2E5978"},{c:"5010",n:"أزرق جنطياني",g:"blue",h:"#13447C"},
+    {c:"5011",n:"أزرق فولاذي",g:"blue",h:"#232C3F"},{c:"5012",n:"أزرق فاتح",g:"blue",h:"#3481B8"},
+    {c:"5013",n:"أزرق كوبالتي",g:"blue",h:"#232D53"},{c:"5014",n:"أزرق حمامي",g:"blue",h:"#6C7C98"},
+    {c:"5015",n:"أزرق سماوي",g:"blue",h:"#2874B2"},{c:"5017",n:"أزرق مروري",g:"blue",h:"#0E518D"},
+    {c:"5018",n:"أزرق تركوازي",g:"blue",h:"#21888F"},{c:"5019",n:"أزرق كابري",g:"blue",h:"#1A5784"},
+    {c:"5020",n:"أزرق محيطي",g:"blue",h:"#0B4151"},{c:"5021",n:"أزرق مائي",g:"blue",h:"#07737A"},
+    {c:"5022",n:"أزرق ليلي",g:"blue",h:"#2F2A5A"},{c:"5023",n:"أزرق بعيد",g:"blue",h:"#4D668E"},
+    {c:"5024",n:"أزرق باستيل",g:"blue",h:"#6A93B0"},
+    // أخضر — 6000 series
+    {c:"6000",n:"أخضر باتينا",g:"green",h:"#327662"},{c:"6001",n:"أخضر زمردي",g:"green",h:"#28713E"},
+    {c:"6002",n:"أخضر ورقي",g:"green",h:"#276235"},{c:"6003",n:"أخضر زيتوني",g:"green",h:"#4B573E"},
+    {c:"6004",n:"أخضر مزرق",g:"green",h:"#0E4243"},{c:"6005",n:"أخضر طحلبي",g:"green",h:"#0F4336"},
+    {c:"6006",n:"زيتوني رمادي",g:"green",h:"#40433B"},{c:"6007",n:"أخضر زجاجي",g:"green",h:"#283424"},
+    {c:"6008",n:"أخضر بني",g:"green",h:"#35382E"},{c:"6009",n:"أخضر صنوبري",g:"green",h:"#26392F"},
+    {c:"6010",n:"أخضر عشبي",g:"green",h:"#3E753B"},{c:"6011",n:"أخضر ريزيدا",g:"green",h:"#68825B"},
+    {c:"6012",n:"أخضر مسود",g:"green",h:"#31403D"},{c:"6013",n:"أخضر قصبي",g:"green",h:"#797C5A"},
+    {c:"6014",n:"زيتوني مصفر",g:"green",h:"#444337"},{c:"6015",n:"زيتوني مسود",g:"green",h:"#3D403A"},
+    {c:"6016",n:"أخضر تركوازي",g:"green",h:"#026A52"},{c:"6017",n:"أخضر ربيعي",g:"green",h:"#468641"},
+    {c:"6018",n:"أخضر مصفر",g:"green",h:"#48A43F"},{c:"6019",n:"أخضر فاتح جدًا",g:"green",h:"#B7D9B1"},
+    {c:"6020",n:"أخضر كروم",g:"green",h:"#354733"},{c:"6021",n:"أخضر باهت",g:"green",h:"#86A47C"},
+    {c:"6022",n:"زيتوني بني",g:"green",h:"#3E3C32"},{c:"6024",n:"أخضر مروري",g:"green",h:"#008754"},
+    {c:"6025",n:"أخضر سرخسي",g:"green",h:"#53753C"},{c:"6026",n:"أخضر أوبالي",g:"green",h:"#005D52"},
+    {c:"6027",n:"أخضر فاتح",g:"green",h:"#81C0BB"},{c:"6028",n:"أخضر صنوبر",g:"green",h:"#2D5546"},
+    {c:"6029",n:"أخضر نعناعي",g:"green",h:"#007243"},{c:"6032",n:"أخضر إشاري",g:"green",h:"#0F8558"},
+    {c:"6033",n:"تركوازي نعناعي",g:"green",h:"#478A84"},{c:"6034",n:"تركوازي باستيل",g:"green",h:"#7FB0B2"},
+    // رمادي — 7000 series
+    {c:"7000",n:"رمادي سنجابي",g:"grey",h:"#7E8B92"},{c:"7001",n:"رمادي فضي",g:"grey",h:"#8F999F"},
+    {c:"7002",n:"رمادي زيتوني",g:"grey",h:"#817F68"},{c:"7003",n:"رمادي طحلبي",g:"grey",h:"#7A7B6D"},
+    {c:"7004",n:"رمادي إشاري",g:"grey",h:"#9EA0A1"},{c:"7005",n:"رمادي فأري",g:"grey",h:"#6B716F"},
+    {c:"7006",n:"رمادي بيج",g:"grey",h:"#756F61"},{c:"7008",n:"رمادي كاكي",g:"grey",h:"#746643"},
+    {c:"7009",n:"رمادي مخضر",g:"grey",h:"#5B6259"},{c:"7010",n:"رمادي خيمة",g:"grey",h:"#575D57"},
+    {c:"7011",n:"رمادي حديدي",g:"grey",h:"#555D61"},{c:"7012",n:"رمادي بازلتي",g:"grey",h:"#596163"},
+    {c:"7013",n:"رمادي بني",g:"grey",h:"#555548"},{c:"7015",n:"رمادي إردوازي",g:"grey",h:"#51565C"},
+    {c:"7016",n:"رمادي أنثراسايت",g:"grey",h:"#373F43"},{c:"7021",n:"رمادي مسود",g:"grey",h:"#2E3234"},
+    {c:"7022",n:"رمادي أمبر",g:"grey",h:"#4B4D46"},{c:"7023",n:"رمادي خرساني",g:"grey",h:"#818479"},
+    {c:"7024",n:"رمادي جرافيتي",g:"grey",h:"#474A50"},{c:"7026",n:"رمادي جرانيتي",g:"grey",h:"#374447"},
+    {c:"7030",n:"رمادي حجري",g:"grey",h:"#939388"},{c:"7031",n:"رمادي مزرق",g:"grey",h:"#5D6970"},
+    {c:"7032",n:"رمادي حصوي",g:"grey",h:"#B9B9A8"},{c:"7033",n:"رمادي أسمنتي",g:"grey",h:"#818979"},
+    {c:"7034",n:"رمادي مصفر",g:"grey",h:"#939176"},{c:"7035",n:"رمادي فاتح",g:"grey",h:"#CBD0CC"},
+    {c:"7036",n:"رمادي بلاتيني",g:"grey",h:"#9A9697"},{c:"7037",n:"رمادي غباري",g:"grey",h:"#7C7F7E"},
+    {c:"7038",n:"رمادي عقيقي",g:"grey",h:"#B4B8B0"},{c:"7039",n:"رمادي كوارتزي",g:"grey",h:"#6B695F"},
+    {c:"7040",n:"رمادي نافذة",g:"grey",h:"#9DA3A6"},{c:"7042",n:"رمادي مروري A",g:"grey",h:"#8F9695"},
+    {c:"7043",n:"رمادي مروري B",g:"grey",h:"#4E5451"},{c:"7044",n:"رمادي حريري",g:"grey",h:"#BDBDB2"},
+    {c:"7045",n:"تيلي رمادي 1",g:"grey",h:"#91969A"},{c:"7046",n:"تيلي رمادي 2",g:"grey",h:"#82898E"},
+    {c:"7047",n:"تيلي رمادي 4",g:"grey",h:"#CFD0CF"},
+    // بني — 8000 series
+    {c:"8000",n:"بني مخضر",g:"brown",h:"#887142"},{c:"8001",n:"بني مغرة",g:"brown",h:"#9C6B30"},
+    {c:"8002",n:"بني إشاري",g:"brown",h:"#7B5141"},{c:"8003",n:"بني طيني",g:"brown",h:"#80542F"},
+    {c:"8004",n:"بني نحاسي",g:"brown",h:"#8F4E35"},{c:"8007",n:"بني غزالي",g:"brown",h:"#6F4A2F"},
+    {c:"8008",n:"بني زيتوني",g:"brown",h:"#6F4F28"},{c:"8011",n:"بني جوزي",g:"brown",h:"#5A3A29"},
+    {c:"8012",n:"بني محمر",g:"brown",h:"#673831"},{c:"8014",n:"بني سيبيا",g:"brown",h:"#49392D"},
+    {c:"8015",n:"بني كستنائي",g:"brown",h:"#633A34"},{c:"8016",n:"بني ماهوجني",g:"brown",h:"#4C2F26"},
+    {c:"8017",n:"بني شوكولاتة",g:"brown",h:"#44322D"},{c:"8019",n:"بني رمادي",g:"brown",h:"#3F3A3A"},
+    {c:"8022",n:"بني مسود",g:"brown",h:"#211F20"},{c:"8023",n:"بني برتقالي",g:"brown",h:"#A65E2F"},
+    {c:"8024",n:"بني بيج",g:"brown",h:"#79553C"},{c:"8025",n:"بني باهت",g:"brown",h:"#755C49"},
+    {c:"8028",n:"بني ترابي",g:"brown",h:"#4E3B2B"},
+    // أبيض وأسود — 9000 series
+    {c:"9001",n:"أبيض كريمي",g:"white",h:"#EFEBDC"},{c:"9002",n:"أبيض رمادي",g:"white",h:"#DDDED4"},
+    {c:"9003",n:"أبيض إشاري",g:"white",h:"#F4F8F4"},{c:"9004",n:"أسود إشاري",g:"white",h:"#2E3032"},
+    {c:"9005",n:"أسود عميق",g:"white",h:"#0A0A0D"},{c:"9006",n:"ألومنيوم أبيض",g:"white",h:"#A5A8A6"},
+    {c:"9007",n:"ألومنيوم رمادي",g:"white",h:"#8F8F8C"},{c:"9010",n:"أبيض نقي",g:"white",h:"#F7F9EF"},
+    {c:"9011",n:"أسود جرافيتي",g:"white",h:"#1C1C1C"},{c:"9016",n:"أبيض مروري",g:"white",h:"#F7FBF5"},
+    {c:"9017",n:"أسود مروري",g:"white",h:"#2A2D2F"},{c:"9018",n:"أبيض بردي",g:"white",h:"#CFD3CD"},
+  ];
+
+  const grid = document.getElementById("catalogGrid");
+  if(grid){
+    grid.innerHTML = colors.map(c => {
+      const msg = "مرحبًا Colors 👋، عايز عرض سعر للون: " + c.n + " (RAL " + c.c + ")";
+      return (
+        '<article class="color-card" data-group="' + c.g + '">' +
+          '<div class="swatch" style="--swatch:' + c.h + '"></div>' +
+          '<div class="card-body">' +
+            '<div class="card-top"><h3 class="mono">RAL ' + c.c + '</h3><span class="finish-badge">' + groupLabels[c.g] + '</span></div>' +
+            '<p class="code">' + c.n + '</p>' +
+            '<button class="btn-quote wa-btn" data-msg="' + msg + '">' +
+              '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .78.8-2.93-.19-.3A7.95 7.95 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>' +
+              'اطلب عرض سعر' +
+            '</button>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join("");
+  }
+
+  // Filter tabs (color catalog)
+  const tabs = document.querySelectorAll("#filterTabs .filter-tab");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const f = tab.getAttribute("data-filter");
+      document.querySelectorAll(".color-card").forEach(card => {
+        card.hidden = !(f === "all" || card.getAttribute("data-group") === f);
+      });
+    });
+  });
+
+  // Equipment & spare parts data (real product photos)
+  const equipment = [
+    {img:"images/p01.jpg", name:"طقم صيانة طبنجة رش", spec:"فوهات وكابل توصيل بديل لصيانة الطبنجة", type:"part"},
+    {img:"images/p02.jpg", name:"منظومة رش بودرة صناعية متكاملة", spec:"طبنجة + خزان استرجاع + وحدة تحكم كاملة لخطوط الإنتاج", type:"tool"},
+    {img:"images/p03.jpg", name:"طبنجة رش الكتروستاتيك يدوية", spec:"طبنجة يدوية مع خرطوم وفوهة قياسية", type:"tool"},
+    {img:"images/p04.jpg", name:"منظومة رش بودرة كاملة", spec:"وحدة تحكم + خزان بودرة استانلس على عجل", type:"tool"},
+    {img:"images/p05.jpg", name:"طبنجة رش + طقم إكسسوارات كامل", spec:"شاملة 3 أنابيب فوهة ومجموعة رؤوس بمقاسات مختلفة", type:"tool"},
+    {img:"images/p06.jpg", name:"جهاز رش بودرة مكتبي مدمج", spec:"وحدة تحكم مدمجة مناسبة للقطع الصغيرة والاختبارات", type:"tool"},
+    {img:"images/p07.jpg", name:"وحدة تحكم رش Galin", spec:"تحكم رقمي في الجهد والتيار، معتمدة CE / SGS", type:"tool"},
+    {img:"images/p08.jpg", name:"صمام تحكم هواء / بودرة", spec:"قطعة غيار أصلية لضبط تدفق الهواء والبودرة", type:"part"},
+    {img:"images/p09.jpg", name:"طقم طبنجة رش الكتروستاتيك متكامل", spec:"طبنجة مع خرطوم وفوهات بديلة، جاهزة للتشغيل", type:"tool"},
+    {img:"images/p10.jpg", name:"أنابيب فوهة بودرة - مقاسات مختلفة", spec:"قطع غيار بديلة لأنبوب تغذية البودرة", type:"part"},
+    {img:"images/p11.jpg", name:"منظومة رش بودرة بشاشة رقمية", spec:"تحكم رقمي دقيق في الجهد (KV) والتيار (µA)", type:"tool"},
+    {img:"images/p12.jpg", name:"منظومة رش بودرة COLO", spec:"خزان استانلس + لوحة تحكم، لخطوط الإنتاج المتوسطة", type:"tool"},
+    {img:"images/p13.jpg", name:"منظومة رش بودرة متنقلة", spec:"عربة متحركة بعجل لسهولة النقل داخل الورشة", type:"tool"},
+    {img:"images/p14.jpg", name:"رؤوس إلكترود Gema - عبوة قطع غيار", spec:"عبوة رؤوس إلكترود أصلية بديلة لبنادق غيما", type:"part"},
+    {img:"images/p15.jpg", name:"وحدة صمام توزيع - قطعة غيار", spec:"صمام توزيع هواء/بودرة بفيتينج نحاس أصلي", type:"part"},
+    {img:"images/p16.jpg", name:"خرطوم بودرة Gema الأصلي", spec:"خرطوم تغذية بودرة أصلي ITW Gema، بالمتر", type:"part"},
+    {img:"images/p17.jpg", name:"صمامات توزيع هواء/بودرة (زوج)", spec:"زوج صمامات توزيع بفيتينج سريع الفك", type:"part"},
+    {img:"images/p18.jpg", name:"وصلة Gema + قلب بودرة أصلي", spec:"وصلة زاوية أصلية مع قلب بودرة بديل", type:"part"},
+    {img:"images/p19.jpg", name:"طقم إلكترودات وفوهات Gema", spec:"إلكترودات ونوابض بديلة بألوان تمييز (أحمر/أسود)", type:"part"},
+  ];
+  const equipTypeLabel = {tool:"جهاز", part:"قطعة غيار"};
+  const equipGrid = document.getElementById("equipGrid");
+  if(equipGrid){
+    equipGrid.innerHTML = equipment.map(p => {
+      const msg = "مرحبًا Colors 👋، عايز أستفسر عن: " + p.name;
+      return (
+        '<article class="equip-card" data-equip="' + p.type + '">' +
+          '<div class="equip-photo"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy"></div>' +
+          '<div class="card-body">' +
+            '<div class="equip-top"><h3>' + p.name + '</h3><span class="equip-badge equip-badge--' + p.type + '">' + equipTypeLabel[p.type] + '</span></div>' +
+            '<p class="spec">' + p.spec + '</p>' +
+            '<button class="btn-equip wa-btn" data-msg="' + msg + '">' +
+              '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .78.8-2.93-.19-.3A7.95 7.95 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>' +
+              'استفسر على واتساب' +
+            '</button>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join("");
+  }
+
+  // Filter tabs (equipment)
+  const equipTabs = document.querySelectorAll("#equipFilterTabs .filter-tab");
+  equipTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      equipTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const f = tab.getAttribute("data-equip-filter");
+      document.querySelectorAll(".equip-card").forEach(card => {
+        card.hidden = !(f === "all" || card.getAttribute("data-equip") === f);
+      });
+    });
+  });
+
+  // Magnetic swatch grid (hero signature)
+  const magnetGrid = document.getElementById("magnet-grid");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(magnetGrid){
+    const palette = ["#ff6a2e","#3fe1ff","#f4f3ef","#1b1b1b","#e35205","#1e5aa8","#b8860b","#4b5320","#c2b280","#8b4a2b","#a9a9ac","#c1272d"];
+    const chips = [];
+    const total = 36;
+    for(let i=0;i<total;i++){
+      const chip = document.createElement("div");
+      chip.className = "chip";
+      chip.style.background = palette[i % palette.length];
+      magnetGrid.appendChild(chip);
+      chips.push(chip);
+    }
+    if(!reduceMotion){
+      magnetGrid.addEventListener("mousemove", (e) => {
+        const rect = magnetGrid.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        chips.forEach(chip => {
+          const cRect = chip.getBoundingClientRect();
+          const cx = cRect.left - rect.left + cRect.width/2;
+          const cy = cRect.top - rect.top + cRect.height/2;
+          const dx = mx - cx, dy = my - cy;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          const radius = 140;
+          if(dist < radius){
+            const pull = (1 - dist/radius) * 8;
+            chip.style.setProperty("--tx", (dx/dist||0)*pull + "px");
+            chip.style.setProperty("--ty", (dy/dist||0)*pull + "px");
+            chip.style.setProperty("--s", 1 + (1 - dist/radius)*0.12);
+          } else {
+            chip.style.setProperty("--tx","0px");
+            chip.style.setProperty("--ty","0px");
+            chip.style.setProperty("--s","1");
+          }
+        });
+      });
+      magnetGrid.addEventListener("mouseleave", () => {
+        chips.forEach(chip => {
+          chip.style.setProperty("--tx","0px");
+          chip.style.setProperty("--ty","0px");
+          chip.style.setProperty("--s","1");
+        });
+      });
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
